@@ -6,14 +6,19 @@
 struct Node
 {
     int data;
-    struct Node *link;
+    struct Node *link; // link is a pointer to a variable of type struct node
 };
 
-struct Node *head; //globally declared as it is being accessed in our Print and Insert functions and we don't want to pass it as an argument again and again
+struct Node *head; // head is a pointer to a variable of type struct node
+//globally declared as it is being accessed in our Print and Insert functions and we don't want to pass it as an argument again and again
 
 void Insert(int x)
 {
     struct Node *temp = (struct Node *)malloc(sizeof(struct Node));
+    // We basically created a pointer of type struct node and initialised it
+    // Since we've initialised it, it is now pointing to a legal memory
+    // only after doing this can we write to that memory, as done below
+    
     temp->data = x;
     temp->link = head; //every new node created gets the address of the node before it
     // 1st node gets NULL, as head points to NULL when the 1st insertion takes place
