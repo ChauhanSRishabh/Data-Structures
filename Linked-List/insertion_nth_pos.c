@@ -65,6 +65,8 @@ int main()
     printf("The Linked List is currently Empty. Enter the number and position of insertion in the order -> num pos\n");
     printf("For 1st input, pos must be 1, i.e., input should look like -> num 1. Afetr that it is the user's choice\n");
 
+    //AREA FOR IMPROVEMENT
+    
     while (1)
     {
         intPointer num, pos;
