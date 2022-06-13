@@ -41,16 +41,16 @@ void Insert(int num)
 
 void Print()
 {
-    struct Node *temp2 = head;
-    while (temp2 != NULL) 
-    // If we would've used (temp2->next != NULL), the program would not have printed the value at the last node, as the next field for the last node has the value NULL
+    struct Node *temp = head;
+    while (temp != NULL) 
+    // If we would've used (temp->next != NULL), the program would not have printed the value at the last node, as the next field for the last node has the value NULL
     //If you still want to use the above condn, then uncomment the printf() statement below 
     // Dry-Run this block of code to understand better
     {
-        printf("%d ", temp2->data);
-        temp2 = temp2->next;
+        printf("%d ", temp->data);
+        temp = temp->next;
     }
-    //printf("%d ", temp2->data);
+    //printf("%d ", temp->data);
 }
 
 int main()
