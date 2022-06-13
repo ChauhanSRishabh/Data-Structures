@@ -4,7 +4,7 @@
 // PROGRAM FOR INSERTION IN A LINKED LIST AT nth POSITION
 
 typedef int* intPointer;
-// cretaed a datatype of type int* 
+// created a datatype of type int* 
 // easy to declare pointer varaibles
 
 struct node
@@ -21,7 +21,7 @@ void insert(int num, int pos)
     temp->data = num;
     temp->next = NULL;
     // Node to be inserted has been created. 
-    // Has the value n and currently points to no valid memory location
+    // Has the value num and currently points to no valid memory location
 
     if (pos == 1)
     {
@@ -31,7 +31,7 @@ void insert(int num, int pos)
     }
 
     struct node *temp1 = head;
-    // we need a pointer to traverse the list to the point where insertion has to take place
+    // we need a pointer to traverse the list to the point just before the point of insertion
     // we used a temporary variable and not head as we didn't want to lose our head pointer
 
     for (int i = 0; i < pos - 2; i++) // for loop will take us to the node that precedes the position of insertion
@@ -46,7 +46,7 @@ void insert(int num, int pos)
 void print()
 {
     struct node *temp2 = head;
-    // If I use temp or temp1 here, we are destined to have a "Segmentation Fault Error" 
+    // If I use temp or temp1 here, we are destined to have a "SIGSEGV : Segmentation Fault Error" 
     // These pointers would be pointing to a certain location in the memory after the insert() function is executed 
     // When we change them to point to head inside our print() function, we are destined for disaster
     // It may run successfully for the first few iterations, but it'll definitely give error: SIGSEGV at some point of time
