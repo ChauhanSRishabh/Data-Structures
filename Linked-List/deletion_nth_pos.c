@@ -34,3 +34,14 @@ void Insert(int num)
     
 }
 
+void Print()
+{
+    struct Node *temp2 = head;
+    while (temp2 != NULL) 
+    {
+        printf("%d ", temp2->data);
+        temp2 = temp2->next;
+    }
+}
+
+
