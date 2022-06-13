@@ -34,6 +34,12 @@ void Insert(int num)
     
 }
 
+void delete(int pos)
+{
+
+}
+
+
 void Print()
 {
     struct Node *temp2 = head;
@@ -44,4 +50,21 @@ void Print()
     }
 }
 
-
+int main()
+{
+    head = NULL; // empty list
+    Insert(2);
+    Insert(4);
+    Insert(6);
+    Insert(5); //List would look like : 2,4,6,5
+    printf("The Linked List is : ");
+    Print();
+    printf("\n");
+    int n;
+    printf("Enter a position at which deletion is to be done\n");
+    scanf("%d", &n);
+    Delete(n);
+    printf("The Linked List after deletion is : ");
+    Print();
+    printf("\n");
+}    
