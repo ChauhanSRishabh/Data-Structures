@@ -7,17 +7,17 @@ typedef int* intPointer;
 // created a datatype of type int* 
 // easy to declare pointer varaibles
 
-struct node
+struct Node
 {
     int data;
-    struct node *next;
+    struct Node *next;
 };
 
-struct node *head;
+struct Node *head;
 
-void insert(int num, int pos)
+void Insert(int num, int pos)
 {
-    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    struct Node *temp = (struct Node *)malloc(sizeof(struct Node));
     temp->data = num;
     temp->next = NULL;
     // Node to be inserted has been created. 
@@ -30,31 +30,26 @@ void insert(int num, int pos)
         return;
     }
 
-    struct node *temp1 = head;
+    struct Node *temp1 = head;
     // we need a pointer to traverse the list to the point just before the point of insertion
     // we used a temporary variable and not head as we didn't want to lose our head pointer
 
-    for (int i = 0; i < pos - 2; i++) // for loop will take us to the node that precedes the position of insertion
+    for (int i = 0; i < pos - 2; i++) // for loop will take us to the Node that precedes the position of insertion
     {
         temp1 = temp1->next;
     }
     // New Linkages are made
-    temp->next = temp1->next; // Incoming node points to what preceding node is pointing to
-    temp1->next = temp; // Preceding node points to the Incoming node
+    temp->next = temp1->next; // Incoming Node points to what preceding Node is pointing to
+    temp1->next = temp; // Preceding Node points to the Incoming Node
 }
 
-void print()
+void Print()
 {
-    struct node *temp2 = head;
-    // If I use temp or temp1 here, we are destined to have a "SIGSEGV : Segmentation Fault Error" 
-    // These pointers would be pointing to a certain location in the memory after the insert() function is executed 
-    // When we change them to point to head inside our print() function, we are destined for disaster
-    // It may run successfully for the first few iterations, but it'll definitely give error: SIGSEGV at some point of time
-
-    while (temp2 != NULL)
+    struct Node *temp = head;
+    while (temp != NULL)
     {
-        printf("%d ", temp2->data);
-        temp2 = temp2->next;
+        printf("%d ", temp->data);
+        temp = temp->next;
     }
 }
 
@@ -90,9 +85,9 @@ int main()
         }
         printf("Enter the number and position of insertion\n");
         scanf("%d %d", num, pos);
-        insert(*num, *pos);
+        Insert(*num, *pos);
         printf("The list is : ");
-        print();
+        Print();
         printf("\n");
         
         free(num);
