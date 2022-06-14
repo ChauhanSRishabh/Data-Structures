@@ -71,6 +71,9 @@ int main()
     head = InsertEnd(head, 4);
     head = InsertEnd(head, 6);
     head = InsertEnd(head, 5);
+    head = InsertEnd(head, 1);
+    head = InsertEnd(head, 3);
+    head = InsertEnd(head, 7);
     printf("The Linked List is : ");
     Display(head);
     printf("\n");
