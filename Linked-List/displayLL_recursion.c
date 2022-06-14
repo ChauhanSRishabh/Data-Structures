@@ -9,7 +9,7 @@ struct Node
     struct Node *next;
 };
 
-void InsertEnd(int num)
+struct Node* InsertEnd(struct Node *head, int num)
 {
     struct Node *temp = (struct Node *)malloc(sizeof(struct Node *));
     temp->data = num;
@@ -19,7 +19,7 @@ void InsertEnd(int num)
     {
         temp->next = head;
         head = temp;
-        return;
+        return head;
     }
 
     struct Node *traverse = head;
@@ -28,6 +28,7 @@ void InsertEnd(int num)
         traverse = traverse->next;
     }
     traverse->next = temp;
+    return head;
 }
 
 // This was our function to display contents of LL using iterative Approach
@@ -42,3 +43,26 @@ void Print()
     }
 }
 */
+
+void Display(struct Node* p) //we can use head instead of p as well, just remember that the scope of this variable is limited to this function
+{
+    if(p==NULL) //This will serve as our exit condition
+    {
+        return;
+    }
+    printf("%d ", p->data);
+    Display(p->next);
+}
+
+int main()
+{
+    struct Node* head = NULL;
+    head = InsertEnd(head, 2);
+    head = InsertEnd(head, 4);
+    head = InsertEnd(head, 6);
+    head = InsertEnd(head, 5);
+    printf("The Linked List is : ");
+    Display(head);
+    printf("\n");
+    return 0;
+}
