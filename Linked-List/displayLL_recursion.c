@@ -54,6 +54,16 @@ void Display(struct Node* p) //we can use head instead of p as well, just rememb
     Display(p->next);
 }
 
+void Display_Reverse_Order(struct Node* p)
+{
+    if(p==NULL) //This will serve as our exit condition
+    {
+        return;
+    }
+    Display_Reverse_Order(p->next);
+    printf("%d ", p->data);
+}
+
 int main()
 {
     struct Node* head = NULL;
@@ -63,6 +73,9 @@ int main()
     head = InsertEnd(head, 5);
     printf("The Linked List is : ");
     Display(head);
+    printf("\n");
+    printf("The Linked List in Reverse Order is : ");
+    Display_Reverse_Order(head);
     printf("\n");
     return 0;
 }
