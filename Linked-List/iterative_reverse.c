@@ -61,3 +61,20 @@ void ReverseLL()
     }
     head = prev; // finally head is pointing to  the previous node, i.e., the last node of our initial LL 
 }
+
+int main()
+{
+    head = NULL;
+    InsertEnd(2);
+    InsertEnd(4);
+    InsertEnd(6);
+    InsertEnd(5);
+    printf("The initial Linked List is : ");
+    Print();
+    printf("\n");
+    ReverseLL();
+    printf("The Linked List after Reversal is is : ");
+    Print();
+    printf("\n");
+    return 0;
+}
