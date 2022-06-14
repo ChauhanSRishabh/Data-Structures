@@ -82,3 +82,12 @@ int main()
     printf("\n");
     return 0;
 }
+
+/*
+IMPORTANT
+
+For a 'Normal Print', Iterative Approach will be a lot more efficient than the Recursive Approach
+Why? Because in Iterative approach, we use just one temporary variable while in Recursive approach, we will use space is the Stack section of the memory for so many function calls, there is implicit use of memory.
+
+For a 'Reverse Print' operation, we will anyway have to store elements in some structure, so if we use Recursion, it's still OK. 
+*/
