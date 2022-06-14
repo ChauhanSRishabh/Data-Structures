@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//REVERSE A LINKED LIST THROUGH AN ITERATIVE APPRAOCH
+// REVERSE A LINKED LIST THROUGH AN ITERATIVE APPRAOCH
 
 struct Node
 {
@@ -16,7 +16,7 @@ void InsertEnd(int num)
     struct Node *temp = (struct Node *)malloc(sizeof(struct Node *));
     temp->data = num;
     temp->next = NULL;
-    
+
     if (head == NULL)
     {
         temp->next = head;
@@ -35,7 +35,7 @@ void InsertEnd(int num)
 void Print()
 {
     struct Node *temp = head;
-    while (temp != NULL) 
+    while (temp != NULL)
     {
         printf("%d ", temp->data);
         temp = temp->next;
@@ -47,9 +47,17 @@ void ReverseLL()
 {
     struct Node *prev, *current, *next; // We need pointers to the current node, previous node and next node
 
-    //to begin with
+    // To begin with, these 2 lines give an idea of what we are starting with
     current = head;
     prev = NULL;
-    
 
+    // ITERATIVE APPROACH
+    while (current != NULL)
+    {
+        next = current->next; //next points to the next node, i.e, the 2nd node for 1st iteration
+        current->next=prev; //alter address of current node to point to the previous node, visualise the reverse linkage
+        prev = current; //before next iteration, current becomes previous
+        current = next; //Next becomes current
+    }
+    head = prev; // finally head is pointing to  the previous node, i.e., the last node of our initial LL 
 }
