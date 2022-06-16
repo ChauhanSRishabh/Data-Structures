@@ -30,6 +30,18 @@ struct Node* GetNewNode(int num)
     return newNode;
 }
 
+void Print() 
+{
+    struct Node* temp = head;
+    printf("Forward: ");
+    while(temp != NULL) 
+    {
+        printf("%d ", temp->data);
+        temp = temp->next;   
+    }
+    printf("\n");
+}
+
 void InsertAtHead(int num)
 {
     struct Node* newNode = GetNewNode(num); //this newNode is local to InsertAtHead
