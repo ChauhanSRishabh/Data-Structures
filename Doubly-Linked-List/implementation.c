@@ -74,11 +74,43 @@ void InsertAtHead(int num)
     head = newNode;
 }
 
+void InsertAtTail(int num)
+{
+    struct Node* newNode = GetNewNode(num);
+    if(head == NULL)
+    {
+        head = newNode;
+        return;
+    }
+    struct Node* traverse = head;
+    while(traverse->next != NULL)
+    {
+        traverse = traverse->next;
+    }
+    //traverse points to the last node;
+    traverse->next = newNode;
+    newNode->prev = traverse;
+}
+
 int main()
 {
     head = NULL;
-    InsertAtHead(2); Print(); ReversePrint();
-    InsertAtHead(4); Print(); ReversePrint();
-    InsertAtHead(6); Print(); ReversePrint();
+    InsertAtHead(2); //Print(); ReversePrint();
+    InsertAtHead(4); //Print(); ReversePrint();
+    InsertAtHead(6); //Print(); ReversePrint();
+    printf("DLL after Insertion at Head/Beginning : ");
+    Print();
+    printf("Same DLL in Reverse Order : ");
+    ReversePrint();
+    
+    //head = NULL; uncomment this if you don't want to see 2,4,6 with 3,5,7
+    
+    InsertAtTail(3);
+    InsertAtTail(5);
+    InsertAtTail(7);
+    printf("DLL after Insertion at End/Tail : ");
+    Print();
+    printf("Same DLL in Reverse Order : ");
+    ReversePrint();
     return 0;
 }
