@@ -23,7 +23,7 @@ struct Node* GetNewNode(int num)
     // We do not want this to happen. 
     //Hence a node is created in Dynamic memory, i.e., Heap as it wll not be cleared from memory unless we explicitly free it.
 
-    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node)); //this newNode is local to GetNewNode
     newNode->data = num; //OR write this as (*newNode).data=num;
     newNode->prev = NULL;
     newNode->next = NULL;
@@ -32,8 +32,15 @@ struct Node* GetNewNode(int num)
 
 void InsertAtHead(int num)
 {
-    
-
+    struct Node* newNode = GetNewNode(num); //this newNode is local to InsertAtHead
+    if (head == NULL)
+    {
+        head = newNode;
+        return;
+    }
+    head->prev = newNode;
+    newNode->next = head;
+    head = newNode;
 }
 
 int main()
