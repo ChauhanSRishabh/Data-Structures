@@ -31,7 +31,20 @@ struct Node* InsertEnd(struct Node *head, int num)
     return head;
 }
 
+struct Node* head;
+
 void Reverse(struct Node* p)
 {
-    
+    //This block serves as our exit condition
+    if(p->next == NULL)
+    {
+        head = p; //We want head to point to the last node for Reverse
+        return;
+    }
+    //Will make Reverse call till we reach the Last Node, i.e., the node with p->next = NULL
+    Reverse(p->next);
+    struct Node* q = p->next; //q points to node after p
+    q->next = p; //make q point to p; reverse linkage
+    p->next = NULL; //make p point to nothing, as ultimately our first node will point to NULL after we've reversed the entire LL
 }
+
