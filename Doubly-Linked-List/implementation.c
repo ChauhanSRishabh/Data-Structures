@@ -55,8 +55,8 @@ void ReversePrint()
     printf( "Reverse: ") ;
     while(temp != NULL)
     {
-        printf("%d ",temp-›data);
-        temp = temp-›prev;
+        printf("%d ",temp->data);
+        temp = temp->prev;
     }
     printf("\n");
 }
@@ -76,5 +76,9 @@ void InsertAtHead(int num)
 
 int main()
 {
-
+    head = NULL;
+    InsertAtHead(2); Print(); ReversePrint();
+    InsertAtHead(4); Print(); ReversePrint();
+    InsertAtHead(6); Print(); ReversePrint();
+    return 0;
 }
