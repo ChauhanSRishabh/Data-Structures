@@ -9,7 +9,9 @@ struct Node
     struct Node *next;
 };
 
-struct Node* InsertEnd(struct Node *head, int num)
+struct Node* head;
+
+void Insert(int num)
 {
     struct Node *temp = (struct Node *)malloc(sizeof(struct Node *));
     temp->data = num;
@@ -19,19 +21,17 @@ struct Node* InsertEnd(struct Node *head, int num)
     {
         temp->next = head;
         head = temp;
-        return head;
+        return;
     }
 
     struct Node *traverse = head;
+
     while (traverse->next != NULL)
     {
         traverse = traverse->next;
     }
-    traverse->next = temp;
-    return head;
+    traverse->next = temp; // Last node is linked with the incoming node
 }
-
-struct Node* head;
 
 void Reverse(struct Node* p)
 {
@@ -57,4 +57,5 @@ void Print()
         temp = temp->next;
     }
 }
+
 
