@@ -48,3 +48,13 @@ void Reverse(struct Node* p)
     p->next = NULL; //make p point to nothing, as ultimately our first node will point to NULL after we've reversed the entire LL
 }
 
+void Print()
+{
+    struct Node *temp = head;
+    while (temp != NULL)
+    {
+        printf("%d ", temp->data);
+        temp = temp->next;
+    }
+}
+
