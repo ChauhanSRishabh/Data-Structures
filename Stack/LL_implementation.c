@@ -29,6 +29,11 @@ void Push(int x)
 
 void Pop()
 {
+    if(top == NULL)
+    {
+        printf("Error : Stack is empty\n");
+        return;
+    }
     struct Node* temp = top;
     top = temp->next;
     free(temp);
