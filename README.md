@@ -3,9 +3,11 @@ Implementing Data Structures in C/C++
 
 ## Concepts
 
-###### ADT - Abstract Data Type
+### ADT - Abstract Data Type
 When we talk about a data structure as ADT, we only talk about the features/operations available with the data structure. We do not go into the implementation details. So, basically we define the data structure as a mathematical/logical model.
 
+### NULL
+NULL is basically assigned to a pointer to specify that the pointer points to no valid memory location.
 
 ## Stacks
 
