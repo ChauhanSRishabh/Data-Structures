@@ -38,8 +38,17 @@ void Print()
     printf("Stack : ");
     for (int i = 0; i <= top; i++)
     {
-        printf("%d ", A[top]);
+        printf("%d ", A[i]);
     }
     printf("\n");
 }
 
+int main()
+{
+    Push(2); Print();
+    Push(5); Print();
+    Push(10); Print();
+    Pop(); Print();
+    Push(12); Print();
+    return 0;
+}
