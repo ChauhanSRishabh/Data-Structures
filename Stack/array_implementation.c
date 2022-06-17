@@ -50,5 +50,6 @@ int main()
     Push(10); Print();
     Pop(); Print();
     Push(12); Print();
+    printf("Element at top is : %d\n",Top());
     return 0;
 }
