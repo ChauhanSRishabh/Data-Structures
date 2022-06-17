@@ -28,3 +28,8 @@ void Pop()
     top--;
 }
 
+int Top()
+{
+    return A[top];
+}
+
