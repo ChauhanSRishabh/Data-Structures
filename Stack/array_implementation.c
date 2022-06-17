@@ -18,4 +18,13 @@ void Push(int x)
     A[++top] = x;
 }
 
+void Pop()
+{
+    if(top == -1)
+    {
+        printf("Error : No element to pop\n");
+        return;
+    }
+    top--;
+}
 
