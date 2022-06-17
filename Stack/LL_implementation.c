@@ -27,6 +27,13 @@ void Push(int x)
     top = newNode;
 }
 
+void Pop()
+{
+    struct Node* temp = top;
+    top = temp->next;
+    free(temp);
+}
+
 void Print()
 {
     struct Node *temp = top;
@@ -43,6 +50,7 @@ int main()
     Push(2);
     Push(3);
     Push(5);
+    Pop();
     Push(7);
     printf("Stack : ");
     Print();
