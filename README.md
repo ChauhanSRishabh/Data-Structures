@@ -21,3 +21,8 @@ Stack is also called **Last In First Out(LIFO)** structure. What goes in last, c
 
 All the operations mentioned above can be performed in constant time, i.e., their time-complexity is O(1)
 
+###### Applications of Stack
+**Function calls/Recursion**
+**undo operation in an editor**
+**Balanced Parenthesis** - a compiler verifies whether the parenthesis are balanced or not, i.e., to each opening  parenthesis in a source code, there must be a closing parenthesis. Eg- {()}
+
