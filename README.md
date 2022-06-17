@@ -9,20 +9,21 @@ When we talk about a data structure as ADT, we only talk about the features/oper
 
 ## Stacks
 
-###### Stack ADT
+### Stack ADT
 A list with the restriction that insertion and deletion can only be performed from one end, called **Top**
+
 Stack is also called **Last In First Out(LIFO)** structure. What goes in last, comes out first.
 
-###### Operations
-**Push()** - Inserting an element into a stack.
-**Pop()** - Removing the most recent element from the stack.
-**Top()** - Returns the element at top of the stack
-**IsEmpty** - Checks whether the stack is empty or not. Returns *True* if empty, *False* otherwise.
+### Operations
+1. **Push()** - Inserting an element into a stack.
+2. **Pop()** - Removing the most recent element from the stack.
+3. **Top()** - Returns the element at top of the stack
+4. **IsEmpty** - Checks whether the stack is empty or not. Returns *True* if empty, *False* otherwise.
 
 All the operations mentioned above can be performed in constant time, i.e., their time-complexity is O(1)
 
-###### Applications of Stack
-**Function calls/Recursion**
-**undo operation in an editor**
-**Balanced Parenthesis** - a compiler verifies whether the parenthesis are balanced or not, i.e., to each opening  parenthesis in a source code, there must be a closing parenthesis. Eg- {()}
+### Applications of Stack
+1. **Function calls/Recursion**
+2. **undo operation in an editor**
+3. **Balanced Parenthesis** - a compiler verifies whether the parenthesis are balanced or not, i.e., to each opening  parenthesis in a source code, there must be a closing parenthesis. Eg- {()}
 
