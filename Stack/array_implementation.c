@@ -1,7 +1,7 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-//STACK - ARRAY BASED IMPLEMENTATION
+// STACK - ARRAY BASED IMPLEMENTATION
 
 #define MAX_SIZE 101
 
@@ -10,7 +10,7 @@ int top = -1;
 
 void Push(int x)
 {
-    if(top == MAX_SIZE - 1)
+    if (top == MAX_SIZE - 1)
     {
         printf("Stack Overflow\n");
         return;
@@ -20,7 +20,7 @@ void Push(int x)
 
 void Pop()
 {
-    if(top == -1)
+    if (top == -1)
     {
         printf("Error : No element to pop\n");
         return;
@@ -31,5 +31,15 @@ void Pop()
 int Top()
 {
     return A[top];
+}
+
+void Print()
+{
+    printf("Stack : ");
+    for (int i = 0; i <= top; i++)
+    {
+        printf("%d ", A[top]);
+    }
+    printf("\n");
 }
 
