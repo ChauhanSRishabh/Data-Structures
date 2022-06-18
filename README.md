@@ -29,3 +29,9 @@ All the operations mentioned above can be performed in constant time, i.e., thei
 2. **undo operation in an editor**
 3. **Balanced Parenthesis** - a compiler verifies whether the parenthesis are balanced or not, i.e., to each opening  parenthesis in a source code, there must be a closing parenthesis. Eg- {()}
 
+### Where to use a Stack?
+1. Reversal of string
+2. Reversal of LL
+
+
+
