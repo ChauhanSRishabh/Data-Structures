@@ -11,16 +11,25 @@ void Reverse(char C[], int n) // We could have written char* C instead of char C
 // n is the4 length of string
 {
     stack<char> S; // Created a stack of characters named S using STL
-    //Loop for Push
+    // Loop for Push
     for (int i = 0; i < n; i++)
     {
         S.push(C[i]);
     }
-    //Loop for Pop
+    // Loop for Pop
     for (int i = 0; i < n; i++)
     {
-        C[i]=S.top(); //Overwrite the character at index i
-        S.pop(); //perform Pop Operation
-    }    
+        C[i] = S.top(); // Overwrite the character at index i
+        S.pop();        // perform Pop Operation
+    }
 }
 
+int main()
+{
+    char C[51];
+    printf("Enter a string : ");
+    gets(C);
+    Reverse(C, strlen(C));
+    printf("Output = %s", C);
+    return 0;
+}
