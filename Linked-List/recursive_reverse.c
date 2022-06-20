@@ -33,6 +33,8 @@ void Insert(int num)
     traverse->next = temp; // Last node is linked with the incoming node
 }
 
+// Time Complexity = O(n)
+// Space Complexity = O(n)
 void Reverse(struct Node* p)
 {
     //This block serves as our exit condition
