@@ -7,8 +7,20 @@ using namespace std;
 
 // STRING REVERSAL USING STACK
 
-void Reverse(char C[], int n) // We could have written char* C instead of char C[]
+void Reverse(char C[], int n) // We could have written char* C instead of char C[], as it is interpretd as char* C by the compiler
+// n is the4 length of string
 {
     stack<char> S; // Created a stack of characters named S using STL
-
+    //Loop for Push
+    for (int i = 0; i < n; i++)
+    {
+        S.push(C[i]);
+    }
+    //Loop for Pop
+    for (int i = 0; i < n; i++)
+    {
+        C[i]=S.top(); //Overwrite the character at index i
+        S.pop(); //perform Pop Operation
+    }    
 }
+
