@@ -43,6 +43,9 @@ void Print()
 }
 
 // Basic logic of the ReverseLL function is to alter the address, i.e., the next field of each node and the head pointer in such a way that the order is reversed.
+
+// Time Complexity = O(n)
+// Space Complexity = O(1)
 void ReverseLL()
 {
     struct Node *prev, *current, *next; // We need pointers to the current node, previous node and next node
