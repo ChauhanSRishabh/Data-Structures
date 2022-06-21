@@ -35,9 +35,9 @@ All the operations mentioned above can be performed in constant time, i.e., thei
 
 ### Stack STL
 
-When we use **#include <stack>**, we have a 'stack' class available to us.  
+When we use #include <stack>, we have a 'stack' class available to us.  
 To create an object of this class, we write **stack<data_type> name/identifier**  
-Eg : **stack <char> S;** creates a stack of characters named S using STL  
+Eg : stack <char> S; creates a stack of characters named S using STL  
 
 #### Functions Available:
 1. **S.push(num/char)** - Inserting an element into a stack.
