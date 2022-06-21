@@ -72,8 +72,19 @@ void Reverse()
         temp = temp->next;
     }
 
-    
+    //popping the references and forming linkages
+    temp = S.top(); //temp has the last node
+    head = temp;    //for reversing, our last node should be our first node
+    S.pop(); //move to the next reference in Stack
 
+    while(!S.empty())
+    {
+        temp->next = S.top();
+        S.pop();
+        temp = temp->next;
+    }
+    //After the loop, temp is our last node(the first node of the initial LL)
+    temp->next = NULL; //last node points to NULL
 }
 
 
