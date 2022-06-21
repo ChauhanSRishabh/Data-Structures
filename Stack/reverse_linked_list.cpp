@@ -95,14 +95,14 @@ int main()
     Insert(4);
     Insert(6);
     Insert(5);
-    printf("The initial Linked List is : ");
+    cout<<"The initial Linked List is : ";
     Print();
-    printf("\n");
+    cout<<endl;
     
-    // Reverse(head);
-    // printf("The Linked List after Reversal is is : ");
-    // Print();
-    // printf("\n");
+    Reverse();
+    cout<<"The Linked List after Reversal using Stack is : ";
+    Print();
+    cout<<endl;;
     return 0;
 }
 
