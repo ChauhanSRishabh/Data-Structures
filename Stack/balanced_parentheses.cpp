@@ -33,3 +33,15 @@ bool CheckBalancedParentheses(char *exp, int n)
     return false;
 }
 
+int main()
+{
+    char exp[51];
+    bool check;
+    cout << "Enter an expression : ";
+    //fflush(stdin);
+    gets(exp);
+    if(CheckBalancedParentheses(exp, strlen(exp)))
+        cout << "BALANCED EXPRESSION";
+    else
+        cout << "NOT  A BALANCED EXPRESSION";
+}
