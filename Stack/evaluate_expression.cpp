@@ -30,4 +30,10 @@ a+b*c will be +a*bc
 Just like Infix, Operand does not need to be a constant/variable, it can be an expression itself
 In Prefix form, an operand can only be associated with 1 operator, unlike Infix
 
+POSTFIX : <operand> <operand> <operator>
+Also called  Reverse Polish notation
+Operator is placed after the operands
+2+3 in Infix will be written as 23+ in Prefix
+a+b*c will be abc*+ 
+
 */
