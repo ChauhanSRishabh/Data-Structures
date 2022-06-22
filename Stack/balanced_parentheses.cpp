@@ -22,14 +22,14 @@ bool CheckBalancedParentheses(char *exp, int n)
             S.push(exp[i]);
         else if (exp[i] == ')' || exp[i] == '}' || exp[i] == ']')
         {
-            if (S.empty() || (S.top() != exp[i])) //last unclosed must be first closed
-                return true;
+            if (S.empty() || (S.top() == '(' & exp[i] != ')') || (S.top() == '{' & exp[i] != '}') || (S.top() == '[' & exp[i] != ']')) //top does not pair with exp[i]
+                return false;
             else
                 S.pop();
         }
     }
     if (S.empty())
         return true;
-    else
-        return false;
+    return false;
 }
+
