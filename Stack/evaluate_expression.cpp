@@ -45,8 +45,8 @@ Prefix and Postfix : good for machines
 */
 
 /*
+POSTFIX EVALUATION
 
-INFIX TO POSTFIX
 A*B+C*D-E
 (A*B)+(C*D)-E
 (AB*)+(CD*)-E
@@ -54,7 +54,7 @@ A*B+C*D-E
 {(AB*)(CD*)+}E-
 AB*CD*+E-
 
-How is evaluation done?
+If given a postfix expression, how is evaluation done?
 AB*CD*+E-
 A=2 B=3 C=5 D=4 E=9
 23*54*+9-
@@ -67,16 +67,43 @@ In Postfix expression, operands of an operator lie to it's left
 
 ALGORITHM
 Parse from Left to Right
-get a token of either operator or operand
+if operand, push it on to the stack
 List : 2 3 
-Now * operator, pop preceding 2 and perform operation
+When operator, pop preceding 2 and perform operation,push the result of the operation
+List : 6
+
+Keep doing the above steps for the entire length of the expression
 List : 6 5 4
-Now * operator, pop preceding 2 and perform operation
+operator *, pop 5 and 4, perform 5*4, push result
 List : 6 20
 and so on..........
+Ultimately, top of stack will have the result
 
 What comes in last, goes out first.
 Our List is nothing but a Stack. Draw the logical implementation.
 
 This is an efficient algo as we are doing just one pass on the expression
+*/
+
+/*
+PREFIX EVALUATION
+
+Infix : A*B+C*D-E
+Prefix form : (*AB)+(*CD)-E => +(*AB)(*CD)-E => -+*AB*CDE
+A=2 B=3 C=5 D=4 E=9
+
+If given a prefix expression, how will evaluation proceed?
+-+*23*549
+In a prefix expression, operands of an operator lie to it's right.
+<operator> <op1> <op2>
+
+ALGORITHM
+Scan from Right to left
+We will use a stack
+if operand, push it on to the stack
+when operator encountered, pop 2 elements, 1st element popped will be <op1> and 2nd will be <op2>.......order matters if subtraction is to be done
+perform operation,push the result of the operation into the stack
+
+Keep doing the above steps for the entire length of the expression
+Ultimately, top of stack will have the result
 */
