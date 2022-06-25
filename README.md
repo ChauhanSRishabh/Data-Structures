@@ -59,3 +59,11 @@ Also called **FIFO(Fist In First Out)**. Whatever goes in fist, comes out first.
 All operations must take constant time, i.e., their time-complexity should be **O(1)**
 
 *Have written the alternate names for the operations because most of the time, we do not write our own implementation of a data structure, we use in-built implementations available with language librarires. Eg : The function to insert an element in a queue in C++ is push(), while in C# it's EnQueue*
+
+### Where to use Queues?
+Queues are most often used in a scenario where there is a shared resource that's supposed to serve some requests but the resource can handle/serve only one request at a time.
+
+### Applications of Queues
+1. **Network Printer**
+2. **Computer Processor** - process scheduling
+3. **Simulating wait**
