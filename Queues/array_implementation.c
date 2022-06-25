@@ -26,3 +26,16 @@ void Enqueue(int num)
         rear += 1;
     A[rear] = num;
 }
+
+void Dequeue()
+{
+    if (isEmpty())
+        return;
+    else if(front == rear)
+    {
+        front = -1;
+        rear = -1;
+    }
+    else
+        front += 1;
+}
