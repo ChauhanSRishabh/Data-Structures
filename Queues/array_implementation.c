@@ -10,9 +10,19 @@ int front = -1, rear = -1;
 
 bool isEmpty()
 {
-    if(front = -1 && rear = -1)
+    if (front = -1 &&rear = -1)
         return true;
     else
         return false;
 }
 
+void Enqueue(int num)
+{
+    if (isFull())
+        return;
+    else if (isEmpty())
+        front = 0, rear = 0;
+    else
+        rear += 1;
+    A[rear] = num;
+}
