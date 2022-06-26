@@ -12,6 +12,13 @@ bool isFull()
 {
     if (rear == MAX_SIZE - 1)
         return true;
+    else
+        return false;    
+}
+
+void displayfront()
+{
+    cout << queue[front];
 }
 
 bool isEmpty()
@@ -24,26 +31,33 @@ bool isEmpty()
 
 void Enqueue(int num)
 {
-    if (isFull())
+    if (isFull()) // when queue is completely full
         return;
-    else if (isEmpty())
-        front = 0, rear = 0;
-    else
+    else if (isEmpty()) // when there are no elements, i.e., 1st insertion occurs
+    {
+        front = 0;
+        rear = 0;
+    }
+    else // when atleast one insertion has already taken place
+    {
         rear += 1;
+    }    
     queue[rear] = num;
 }
 
 void Dequeue()
 {
-    if (isEmpty())
+    if (isEmpty()) // when queue is empty
         return;
-    else if (front == rear)
+    else if (front == rear) // when there is just one element inside the queue
     {
         front = -1;
         rear = -1;
     }
-    else
+    else // more than one element in the queue
+    {
         front += 1;
+    }        
 }
 
 // CIRCULAR ARRAY
@@ -52,11 +66,6 @@ Current Position = i
 Next Position = (i+1)%N
 Previous Position = (i+N-1)%N
 */
-
-void displayfront()
-{
-    cout << queue[front];
-}
 
 void display()
 {
@@ -77,10 +86,10 @@ void display()
 
 int main()
 {
-    Enqueue(2);
-    display();
+    Enqueue(1);
+    //display();
     Enqueue(4);
-    display();
+    //display();
     Enqueue(5);
     display();
     Dequeue();
