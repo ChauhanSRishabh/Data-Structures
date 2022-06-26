@@ -8,6 +8,12 @@
 int A[MAX_SIZE];
 int front = -1, rear = -1;
 
+bool isFull()
+{
+    if(rear == MAX_SIZE - 1)
+        return true;
+}
+
 bool isEmpty()
 {
     if (front = -1 &&rear = -1)
@@ -39,3 +45,17 @@ void Dequeue()
     else
         front += 1;
 }
+
+// CIRCULAR ARRAY
+/*
+Current Position = i
+Next Position = (i+1)%N
+Previous Position = (i+N-1)%N
+*/
+
+
+int front()
+{
+    return A[front];
+}
+
