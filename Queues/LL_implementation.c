@@ -47,8 +47,24 @@ void Enqueue(int x)
         front = rear = temp;
         return;
     }
-    rear->next = temp; //inserting at the end
-    rear = temp; //making rear point to the newly inserted node 
+    rear->next = temp; // Only runs,when there is atleast one element in the queue, i.e., inserting at the end
+    rear = temp;       // Making rear point to the newly inserted node
 }
 
-void
+void Dequeue() // Deleting from the front
+{
+    struct Node *temp = front;
+    if (front == NULL) // When Queue is empty
+    {
+        printf("Queue is empty. Nothing to remove\n");
+        return
+    }
+    if (front == rear) //When there is just one element in the Queue
+    {
+        front = rear = NULL
+        return;
+    }
+    // These lines run only when there are more than one element in the queue
+    front = temp->next; //front now points to the next node in the Queue 
+    free(temp); //free the memory, i.e., node is wiped off
+}
