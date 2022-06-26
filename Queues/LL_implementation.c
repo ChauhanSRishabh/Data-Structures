@@ -4,6 +4,19 @@
 // To implement Queues using LL, we basically have to insert at the end/tail and delete from the head OR vice-versa 
 
 /*
+PROBLEM W/ NORMAL IMPLEMENTATION OF LL
+There is just one requirement with Queue Data Structure, the operations Enqueue, Dequeue, front and isEmpty must take constant time, i.e., O(1)
+
+Cost of insertion/removal in a LL:
+at head = O(1)
+at end = O(n)
+
+Here's the deal, in a normal implementation of LL, if we insert at one end and remove from the other, then one of these operations, Enqueue or Dequeue, depending on how we are picking sides, will cost us O(n).
+
+We must make sure that both Enqueue and Dequeue operation take constant time.
+*/
+
+/*
 PROBLEM WITH ARRAY BASED IMPLEMENETATION
 (1) We can take a large enough array and use only few block of memory. As a result, we'll be left with unused memory, which is not efficient
 (2) Suppose the array gets filled completely and we have to insert another element into it, we will first have to create a new larger array and copy elements from previous array into this larger array which would take time T ∝ n, i.e., O(n)
