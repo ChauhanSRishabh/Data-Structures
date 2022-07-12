@@ -96,7 +96,7 @@ All levels except possibly the last level are completely filled and all nodes ar
 
 <img width="1405" alt="Screenshot 2022-07-09 at 12 08 26 AM" src="https://user-images.githubusercontent.com/15028913/178259757-f22c74a2-1179-4489-9949-d693a0872c37.png">
 
-**Height of complete binary tree** = *floor of log n to base 2*
+**Height of complete binary tree** = *floor of log₂ n*
 
 <img width="704" alt="Screenshot 2022-07-12 at 11 54 37 AM" src="https://user-images.githubusercontent.com/15028913/178422880-421e8d1d-9524-4976-90e4-7ad3ff29d519.png">
 
@@ -113,16 +113,16 @@ We can also say *2^(no. of levels) - 1*
 
 **Height of a perfect binary tree with n nodes**  
 n = 2^(h+1) - 1  
-2^(h+1) = n + 1
-h = log(n+1) - 1 (log to the base 2)
+2^(h+1) = n + 1  
+*h = log₂(n+1) - 1*
 
 <img width="734" alt="Screenshot 2022-07-12 at 11 52 13 AM" src="https://user-images.githubusercontent.com/15028913/178422503-6bc83297-57d3-4614-99f6-34c765e4892c.png">
 
 ### Time Complexity
 
-With n nodes, *Min height* possible is *floor of log n to base 2* and *Max height* possible is *n-1*   
+With n nodes, *Min height* possible is *floor of log₂ n* and *Max height* possible is *n-1*   
 Time taken for an operation is proportional to height of the tree, i.e., **O(h)**  
-- For a **Complete/Perfect binary Tree**, time complexity will be **O(log n to the base 2)**
+- For a **Complete/Perfect binary Tree**, time complexity will be **O(log₂ n)**
 - For Parse tree, worst case = **O(n)**
 
 Quite often we want to keep the height of a binary tree, minimum possible, or we can say that we try to keep a binary tree, **Balanced**
@@ -139,3 +139,20 @@ In the figure below, we have a balanced binary tree as max diff is 1.
 Not a balanced binary tree  
 <img width="604" alt="Screenshot 2022-07-12 at 12 31 19 PM" src="https://user-images.githubusercontent.com/15028913/178429095-c22a250a-adc7-481a-aa5d-c5f174e6e3d0.png">
 
+### Implementation of Binary Tree
+
+We can implement binary tree using :  
+1. dynamically reated nodes
+2. arrays
+
+**Using Arrays** : In a complete binary tree, for a node at index i,
+- left-child index = 2i+1
+- right-child index = 2i+2
+
+## Binary Search Tree
+
+A BST is a binary tree in which for each node, value of all the nodes in left subtree is lesser or equal and the value of all the nodes in right subtree is greater.  
+*We can search, insert and delete in a BST in O(log₂ n) time in average case*
+*Worst case = O(n)*
+
+<img width="1306" alt="Screenshot 2022-07-12 at 5 42 42 PM" src="https://user-images.githubusercontent.com/15028913/178486983-d4667cf4-d6d8-4464-b81f-3e02b9de1643.png">
