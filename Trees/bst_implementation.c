@@ -10,7 +10,7 @@ struct BstNode
     struct BstNode *right; // pointer to right child
 };
 
-struct Node* GetNewNode(int data)
+struct BstNode* GetNewNode(int data)
 {
     struct BstNode* newNode = (struct BstNode *)malloc(sizeof(struct BstNode));
     newNode->data = data;
@@ -36,6 +36,19 @@ struct BstNode* Insert(struct BstNode* root, int data)
 
 // Insertion can also be achieved using temporary pointer to nodes and loops
 
+
+int search(struct BstNode* root, int data)
+{
+    if(root==NULL)
+        return 0;
+    else if(root->data == data)
+        return 1;
+    else if(data <= root->data)
+        return search(root->left, data);
+    else
+        return search(root->right, data);
+}
+
 int main()
 {
     struct BstNode *root = NULL; // Creating an Empty Tree. root is pointer to root node
@@ -47,4 +60,8 @@ int main()
     root = Insert(root, 8);
     root = Insert(root, 12);
 
+    int num;
+    printf("Enter no. to be searched : ");
+    scanf("%d", &num);
+    (search(root, num))?printf("\nFound"):printf("\nNot Found");
 }
