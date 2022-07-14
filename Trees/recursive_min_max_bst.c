@@ -33,6 +33,23 @@ struct BstNode *Insert(struct BstNode *root, int data)
     return root;
 }
 
+int FindMin(struct BstNode *root)
+{
+    if (root == NULL)
+    {
+        printf("Error : No nodes in BST\n");
+        return -1;
+    }
+
+    // We known that minimum element in a BST is the leftmost leaf node for the left subtree
+    
+    else if (root->left == NULL)
+        return root->data;
+    // Using Recursion to reach the leftmost leaf node in the BST
+    return FindMin(root->left);
+}
+
+
 int FindMax(struct BstNode *root)
 {
     if (root == NULL)
@@ -62,5 +79,7 @@ int main()
 
     int max = FindMax(root);
     printf("Maximum element is : %d\n", max);
+    int min = FindMin(root);
+    printf("Minimum element is : %d\n", min);
     return 0;
 }
