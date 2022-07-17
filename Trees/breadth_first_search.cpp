@@ -19,6 +19,7 @@ Node *GetNewNode(char data)
     return newNode;
 }
 
+// BREADTH FIRST SEARCH
 void LevelOrderTraversal(Node *root)
 {
     if (root == NULL)
@@ -27,15 +28,17 @@ void LevelOrderTraversal(Node *root)
         return;
     }
     queue<Node *> Q;
-    Q.push(root);
-    while(!Q.empty())
+    Q.push(root); // pushing the root node into the queue
+
+    while (!Q.empty()) // while there is atleast one discovered node
     {
-        Node* current = Q.front();
-        cout << current->data << " ";
-        if(current->left != NULL)
-            Q.push(root->left);
-        if(current->right != NULL)
-            Q.push(root->right);
-        Q.pop();
+        Node *current = Q.front();    // assigning the pointer to node at front of the queue to a temporary pointer
+        cout << current->data << " "; // display content of the node
+        if (current->left != NULL)    // check to see if it has a left child
+            Q.push(root->left);       // push the left child into the queue
+        if (current->right != NULL)   // check to see if it has a right child
+            Q.push(root->right);      // push the right child into the queue
+        Q.pop();                      // remove the element at front
     }
 }
+
