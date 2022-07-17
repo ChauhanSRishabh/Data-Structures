@@ -35,10 +35,30 @@ void LevelOrderTraversal(Node *root)
         Node *current = Q.front();    // assigning the pointer to node at front of the queue to a temporary pointer
         cout << current->data << " "; // display content of the node
         if (current->left != NULL)    // check to see if it has a left child
-            Q.push(root->left);       // push the left child into the queue
+            Q.push(current->left);       // push the left child into the queue
         if (current->right != NULL)   // check to see if it has a right child
-            Q.push(root->right);      // push the right child into the queue
+            Q.push(current->right);      // push the right child into the queue
         Q.pop();                      // remove the element at front
     }
 }
 
+int main()
+{
+    /*Code To Test the logic
+	  Creating an example tree
+	            B
+			   / \
+			  A   C
+			 / \
+			Z   D
+    
+    */
+    Node *root = GetNewNode('B');
+    root->left = GetNewNode('A');
+    root->right =GetNewNode('C');
+    root->left->left = GetNewNode('Z');
+    root->left->right = GetNewNode('D');
+
+    LevelOrderTraversal(root);
+    return 0;
+}
