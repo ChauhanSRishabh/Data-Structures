@@ -149,7 +149,7 @@ We can implement binary tree using :
 - left-child index = 2i+1
 - right-child index = 2i+2
 
-### Traversal Techniques
+## Traversal Techniques
 
 There are 2 traversal techiniques for a binary tree :
 1. Breadth-first
@@ -157,7 +157,7 @@ There are 2 traversal techiniques for a binary tree :
 
 <img width="1409" alt="Screenshot 2022-07-16 at 7 24 30 PM" src="https://user-images.githubusercontent.com/15028913/179443950-c8701bc3-3ad6-4283-9b31-985bebd1b7f1.png">
 
-#### Breadth-first Approach
+### Breadth-first Approach
 Also known as **Level Order Traversal**.  
 In breadth-first approach, we would visit all the nodes at same depth/level before visiting the nodes at next level.
 
@@ -172,7 +172,7 @@ As the algorithm proceeds, at some point, for each level, all the nodes in that 
 
 Space complexity as we know is the *measure of rate of growth of extra memory used with input size*. We are not using constant amount of extra memory in this algorithm. We have this queue, that will grow and shrink throughout. Assuming that the queue is dynamic, maximum amount of extra memory used will depend upon maximum no. of elements in the queue at any time. 
 
-#### Depth-first Approach
+### Depth-first Approach
 In this approach, if we go to a child, we would complete the whole subtree of the child before going to the next child.  
 Take the tree in the above pic as example, if we start from F(the root node), and go left to D, then we should visit all the nodes in the left subtree, i.e., we shoud finish this left subtree in it's complete depth or in other words, we should visit all the grandchildren of F along this path before going to right child of F, J. Then do the same for J as done for D.
 
