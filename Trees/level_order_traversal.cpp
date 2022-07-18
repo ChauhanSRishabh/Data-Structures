@@ -19,7 +19,7 @@ Node *GetNewNode(char data)
     return newNode;
 }
 
-// BREADTH FIRST SEARCH
+// BREADTH FIRST APPROACH
 void LevelOrderTraversal(Node *root)
 {
     if (root == NULL)
