@@ -149,10 +149,35 @@ We can implement binary tree using :
 - left-child index = 2i+1
 - right-child index = 2i+2
 
+### Traversal Techniques
+
+There are 2 traversal techiniques for a binary tree :
+1. Breadth-first
+2. Depth-first
+
+<img width="1409" alt="Screenshot 2022-07-16 at 7 24 30 PM" src="https://user-images.githubusercontent.com/15028913/179443950-c8701bc3-3ad6-4283-9b31-985bebd1b7f1.png">
+
+#### Breadth-first Approach
+Also known as **Level Order Traversal**.  
+In breadth-first approach, we would visit all the nodes at same depth/level before visiting the nodes at next level.
+
+#### Depth-first Approach
+In this approach, if we go to a child, we would complete the whole subtree of the child before going to the next child.  
+Take the tree in the above pic as example, if we start from F(the root node), and go left to D, then we should visit all the nodes in the left subtree, i.e., we shoud finish this left subtree in it's complete depth or in other words, we should visit all the grandchildren of F along this path before going to right child of F, J. Then do the same for J as done for D.
+
+In depth-first approach, the relative order of visiting the left subtree, the right subtree and the root node can be different. Based on this relative order, there are 3 popular depth-first startegies :
+1. **Preorder traversal** : \<root\> \<left\> \<right\>
+2. **Inorder traversal** : \<left\> \<root\> \<right\>
+3. **Postorder traversal** : \<left\> \<right\> \<root\>
+
+In total there are 6 possible permutations for \<left\>, \<right\> and \<root\> but conventionally, the left subtree is always visited before the right subtree. Hence these are the 3 startegies that we use.
+
 ## Binary Search Tree
 
 A BST is a binary tree in which for each node, value of all the nodes in left subtree is lesser or equal and the value of all the nodes in right subtree is greater.  
-*We can search, insert and delete in a BST in O(log₂ n) time in average case*
+*We can search, insert and delete in a BST in O(log₂ n) time in average case*  
 *Worst case = O(n)*
+
+<img width="620" alt="Screenshot 2022-07-12 at 5 53 14 PM" src="https://user-images.githubusercontent.com/15028913/179442390-d31e2049-fb2f-4138-99b5-d5a4e6ff5287.png">
 
 <img width="1306" alt="Screenshot 2022-07-12 at 5 42 42 PM" src="https://user-images.githubusercontent.com/15028913/178486983-d4667cf4-d6d8-4464-b81f-3e02b9de1643.png">
