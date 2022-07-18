@@ -170,7 +170,7 @@ During each visit, one node will be taken out from the queue and one node will b
 - **Avg & Worst Case** : **O(n)** ; for a perfetc binary tree  
 As the algorithm proceeds, at some point, for each level, all the nodes in that level will be in the queue. *In a perfect binary tree, we'll have n/2 nodes at the deepest level*. So, max no. of nodes in the queue is going to be atleast n/2. Hence space complexity will be O(n/2)->O(n)
 
-**Space complexity** as we know is the *measure of rate of growth of extra memory used with input size*. We are not using constant amount of extra memory in this algorithm. We have this queue, that will grow and shrink throughout. Assuming that the queue is dynamic, maximum amount of extra memory used will depend upon maximum no. of elements in the queue at any time. 
+Space complexity as we know is the *measure of rate of growth of extra memory used with input size*. We are not using constant amount of extra memory in this algorithm. We have this queue, that will grow and shrink throughout. Assuming that the queue is dynamic, maximum amount of extra memory used will depend upon maximum no. of elements in the queue at any time. 
 
 #### Depth-first Approach
 In this approach, if we go to a child, we would complete the whole subtree of the child before going to the next child.  
@@ -182,6 +182,14 @@ In depth-first approach, the relative order of visiting the left subtree, the ri
 3. **Postorder traversal** : \<left\> \<right\> \<root\>
 
 In total there are 6 possible permutations for \<left\>, \<right\> and \<root\> but conventionally, the left subtree is always visited before the right subtree. Hence these are the 3 startegies that we use.
+
+**Time Complexity** : **O(n)** ; For all 3 traversal tachniques  
+There was one function call for each node where we were actually visiting that node and then we were printing the data in that node. So the running time is proportional to no. of nodes.  
+To see the mathematical proof of how the time complexity of these algorithms is O(n), [click here](https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/)
+
+**Space Complexity** : **O(h)**, *h is the height of the tree*
+- **Worst Case** : **O(n)** , h being n-1
+- **Best/Avg Case** : **O(log₂ n)** , height is (log₂ n) for a balanced tree
 
 ## Binary Search Tree
 
