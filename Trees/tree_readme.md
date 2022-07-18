@@ -161,6 +161,17 @@ There are 2 traversal techiniques for a binary tree :
 Also known as **Level Order Traversal**.  
 In breadth-first approach, we would visit all the nodes at same depth/level before visiting the nodes at next level.
 
+**Time Complexity** : **O(n)** ; For all cases, irrespective of the shape of the tree  
+A visit to a node will take constant time and each node will be visited exactly once. So *time taken will be proportional to no. of nodes*.
+
+**Space Complexity** :
+- **Best Case** : **O(1)**; when each node has exactly one child.  
+During each visit, one node will be taken out from the queue and one node will be inserted.
+- **Avg & Worst Case** : **O(n)** ; for a perfetc binary tree  
+As the algorithm proceeds, at some point, for each level, all the nodes in that level will be in the queue. *In a perfect binary tree, we'll have n/2 nodes at the deepest level*. So, max no. of nodes in the queue is going to be atleast n/2. Hence space complexity will be O(n/2)->O(n)
+
+**Space complexity** as we know is the *measure of rate of growth of extra memory used with input size*. We are not using constant amount of extra memory in this algorithm. We have this queue, that will grow and shrink throughout. Assuming that the queue is dynamic, maximum amount of extra memory used will depend upon maximum no. of elements in the queue at any time. 
+
 #### Depth-first Approach
 In this approach, if we go to a child, we would complete the whole subtree of the child before going to the next child.  
 Take the tree in the above pic as example, if we start from F(the root node), and go left to D, then we should visit all the nodes in the left subtree, i.e., we shoud finish this left subtree in it's complete depth or in other words, we should visit all the grandchildren of F along this path before going to right child of F, J. Then do the same for J as done for D.
