@@ -200,3 +200,30 @@ A BST is a binary tree in which for each node, value of all the nodes in left su
 <img width="620" alt="Screenshot 2022-07-12 at 5 53 14 PM" src="https://user-images.githubusercontent.com/15028913/179442390-d31e2049-fb2f-4138-99b5-d5a4e6ff5287.png">
 
 <img width="1306" alt="Screenshot 2022-07-12 at 5 42 42 PM" src="https://user-images.githubusercontent.com/15028913/178486983-d4667cf4-d6d8-4464-b81f-3e02b9de1643.png">
+
+### Delete a node from BST
+
+We know that in a BST, for each node, value of all the nodes in left subtree is lesser or equal and the value of all the nodes in right subtree is greater. This property must be conserved after the deletion operation.
+
+**Case 1 : No child/Delete a leaf node**  
+Delete the node and clear the link
+
+**Case 2 : Delete a non-leaf node that has only 1 child**  
+Delete the node and link it's parent node to it's left/right subtree.  
+*Shown below is an example as to what the tree would look like if we were to delete Node with value 7*  
+
+<img width="1409" alt="Screenshot 2022-07-19 at 8 19 20 PM" src="https://user-images.githubusercontent.com/15028913/179780189-0b67868a-d026-4d1f-ad7b-217d8addedf8.png">
+
+**Case 3 : Delete a non-leaf node that has 2 children**  
+
+**Approach 1** : Delete the node and then **find the node with minimum value in the right subtree** of that node which will ultimately take it's place so that the property of BST is conserved.  
+It is important to understand that since we are taking the node with minimum value in the right subtree, it **won't have a left child** because if there is a left child, then there is something lesser and we would have picked that instead.  
+Hence, the only **2 possible scenarios after picking the node with minmum value** are :
+- it may have a right child and then this case redeces to Case 2
+- it may have no child and then it reduces to Case 1
+
+**Approach 2** : Same as Approach 1, we only need to **find the node with maximum value in the left subtree**
+
+*Shown below is an example as to what the tree would look like if we were to delete Node with value 15. Node 14(max in left subtree) or Node 17(min in right subtree), either of them can take it's place*  
+
+<img width="1409" alt="Screenshot 2022-07-19 at 8 49 30 PM" src="https://user-images.githubusercontent.com/15028913/179787182-b3256982-2f19-44d7-a016-e1bdec87f346.png">
