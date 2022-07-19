@@ -19,24 +19,19 @@ Node *GetNewNode(int data)
 }
 
 // Function to Insert Node in a Binary Search Tree
-Node* Insert(Node *root,int data) {
-	if(root == NULL)
-		root = GetNewNode(data);
-	else if(data <= root->data)
-		root->left = Insert(root->left,data);
-	else 
-		root->right = Insert(root->right,data);
-	return root;
+Node *Insert(Node *root, int data)
+{
+    if (root == NULL)
+        root = GetNewNode(data);
+    else if (data <= root->data)
+        root->left = Insert(root->left, data);
+    else
+        root->right = Insert(root->right, data);
+    return root;
 }
 
 Node *FindMin(Node *root)
 {
-    if (root == NULL)
-    {
-        printf("Error : No nodes in BST\n");
-        return;
-    }
-
     // We known that minimum element in a BST is the leftmost leaf node
     // Using Iteration to reach the leftmost leaf node in the BST
     while (root->left != NULL)
@@ -78,10 +73,19 @@ Node *Delete(Node *root, int data)
         // Case 3 : 2 children
         else
         {
-            Node *temp = FindMin(root->right) // OR FindMax(root->left)
-                         root->data = temp->data;
-            root->right = Delete(root->right, temp->data)
+            Node *temp = FindMin(root->right); // OR FindMax(root->left)
+            root->data = temp->data;
+            root->right = Delete(root->right, temp->data);
         }
     }
     return root;
+}
+
+void Inorder(Node *root)
+{
+    if (root == NULL)
+        return;
+    Inorder(root->left);       // visit left subtree
+    cout << root->data << " "; // print data
+    Inorder(root->right);      // visit right subtree
 }
