@@ -9,6 +9,41 @@ struct Node
     Node *right;
 };
 
+Node *GetNewNode(int data)
+{
+    Node *newNode = new (Node);
+    newNode->data = data;
+    newNode->left = NULL;
+    newNode->right = NULL;
+    return newNode;
+}
+
+// Function to Insert Node in a Binary Search Tree
+Node* Insert(Node *root,int data) {
+	if(root == NULL)
+		root = GetNewNode(data);
+	else if(data <= root->data)
+		root->left = Insert(root->left,data);
+	else 
+		root->right = Insert(root->right,data);
+	return root;
+}
+
+Node *FindMin(Node *root)
+{
+    if (root == NULL)
+    {
+        printf("Error : No nodes in BST\n");
+        return;
+    }
+
+    // We known that minimum element in a BST is the leftmost leaf node
+    // Using Iteration to reach the leftmost leaf node in the BST
+    while (root->left != NULL)
+        root = root->left;
+    return root;
+}
+
 Node *Delete(Node *root, int data)
 {
     if (root == NULL)
@@ -24,7 +59,6 @@ Node *Delete(Node *root, int data)
         {
             delete root; // delete is an operator in C++ used to deallocate memory of an object in Heap. In C, we'd have used free function
             root = NULL; // memory was deallocated but root still has it's address
-            return root; // one of the above 2 else ifs will have the correct reference/link with this
         }
 
         // Case 2 : One Child
@@ -32,17 +66,22 @@ Node *Delete(Node *root, int data)
         {
             Node *temp = root;  // store the address of node to be deleted in temporary variable
             root = root->right; // points to right child
-            delete temp;
-            return root;
+            delete temp;        // deallocate memory
         }
         else if (root->right == NULL) // Only left child
         {
             Node *temp = root; // store the address of node to be deleted in temporary variable
             root = root->left; // points to left child
-            delete temp;
-            return root;
+            delete temp;       // deallocate memory
         }
 
-        
+        // Case 3 : 2 children
+        else
+        {
+            Node *temp = FindMin(root->right) // OR FindMax(root->left)
+                         root->data = temp->data;
+            root->right = Delete(root->right, temp->data)
+        }
     }
+    return root;
 }
