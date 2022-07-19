@@ -27,5 +27,22 @@ Node *Delete(Node *root, int data)
             return root; // one of the above 2 else ifs will have the correct reference/link with this
         }
 
+        // Case 2 : One Child
+        else if (root->left == NULL) // Only right child
+        {
+            Node *temp = root;  // store the address of node to be deleted in temporary variable
+            root = root->right; // points to right child
+            delete temp;
+            return root;
+        }
+        else if (root->right == NULL) // Only left child
+        {
+            Node *temp = root; // store the address of node to be deleted in temporary variable
+            root = root->left; // points to left child
+            delete temp;
+            return root;
+        }
+
+        
     }
 }
