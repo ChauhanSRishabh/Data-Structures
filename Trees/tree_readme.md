@@ -7,13 +7,13 @@ In all of these, data is arranged in a sequential manner.
 
 <img width="1405" alt="Screenshot 2022-07-08 at 11 34 00 PM" src="https://user-images.githubusercontent.com/15028913/178207605-a2391691-809e-417d-bfc1-303789b6cf72.png">
 
-Each arraow in the diagram is a link.  
+Each arrow in the diagram is a link.  
 When we are walking the tree, we can walk in only one direction. 
 
 ### Relationships
 
 - **Root node** : The topmost node. Only node without a parent ; Node 1  
-- **Prent Node** : Node 1 is parent of nodes 2 and 3.  
+- **Parent Node** : Node 1 is parent of nodes 2 and 3.  
 - **Children** : 2 and 3 are children of 1  
 Node 2 is child of 1 but parent of nodes 4, 5 and 6
 - **Sibling** : Children of same parent.
@@ -142,7 +142,7 @@ Not a balanced binary tree
 ### Implementation of Binary Tree
 
 We can implement binary tree using :  
-1. dynamically reated nodes
+1. dynamically created nodes
 2. arrays
 
 **Using Arrays** : In a complete binary tree, for a node at index i,
@@ -151,7 +151,7 @@ We can implement binary tree using :
 
 ## Traversal Techniques
 
-There are 2 traversal techiniques for a binary tree :
+There are 2 traversal techniques for a binary tree :
 1. Breadth-first
 2. Depth-first
 
@@ -167,23 +167,23 @@ A visit to a node will take constant time and each node will be visited exactly 
 **Space Complexity** :
 - **Best Case** : **O(1)**; when each node has exactly one child.  
 During each visit, one node will be taken out from the queue and one node will be inserted.
-- **Avg & Worst Case** : **O(n)** ; for a perfetc binary tree  
+- **Avg & Worst Case** : **O(n)** ; for a perfect binary tree  
 As the algorithm proceeds, at some point, for each level, all the nodes in that level will be in the queue. *In a perfect binary tree, we'll have n/2 nodes at the deepest level*. So, max no. of nodes in the queue is going to be atleast n/2. Hence space complexity will be O(n/2)->O(n)
 
 Space complexity as we know is the *measure of rate of growth of extra memory used with input size*. We are not using constant amount of extra memory in this algorithm. We have this queue, that will grow and shrink throughout. Assuming that the queue is dynamic, maximum amount of extra memory used will depend upon maximum no. of elements in the queue at any time. 
 
 ### Depth-first Approach
 In this approach, if we go to a child, we would complete the whole subtree of the child before going to the next child.  
-Take the tree in the above pic as example, if we start from F(the root node), and go left to D, then we should visit all the nodes in the left subtree, i.e., we shoud finish this left subtree in it's complete depth or in other words, we should visit all the grandchildren of F along this path before going to right child of F, J. Then do the same for J as done for D.
+Take the tree in the above pic as example, if we start from F(the root node), and go left to D, then we should visit all the nodes in the left subtree, i.e., we should finish this left subtree in it's complete depth or in other words, we should visit all the grandchildren of F along this path before going to right child of F, J. Then do the same for J as done for D.
 
-In depth-first approach, the relative order of visiting the left subtree, the right subtree and the root node can be different. Based on this relative order, there are 3 popular depth-first startegies :
+In depth-first approach, the relative order of visiting the left subtree, the right subtree and the root node can be different. Based on this relative order, there are 3 popular depth-first strategies :
 1. **Preorder traversal** : \<root\> \<left\> \<right\>
 2. **Inorder traversal** : \<left\> \<root\> \<right\>
 3. **Postorder traversal** : \<left\> \<right\> \<root\>
 
-In total there are 6 possible permutations for \<left\>, \<right\> and \<root\> but conventionally, the left subtree is always visited before the right subtree. Hence these are the 3 startegies that we use.
+In total there are 6 possible permutations for \<left\>, \<right\> and \<root\> but conventionally, the left subtree is always visited before the right subtree. Hence these are the 3 strategies that we use.
 
-**Time Complexity** : **O(n)** ; For all 3 traversal tachniques  
+**Time Complexity** : **O(n)** ; For all 3 traversal techniques  
 There was one function call for each node where we were actually visiting that node and then we were printing the data in that node. So the running time is proportional to no. of nodes.  
 To see the mathematical proof of how the time complexity of these algorithms is O(n), [click here](https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/)
 
@@ -218,8 +218,8 @@ Delete the node and link it's parent node to it's left/right subtree.
 
 **Approach 1** : Delete the node and then **find the node with minimum value in the right subtree** of that node which will ultimately take it's place so that the property of BST is conserved.  
 It is important to understand that since we are taking the node with minimum value in the right subtree, it **won't have a left child** because if there is a left child, then there is something lesser and we would have picked that instead.  
-Hence, the only **2 possible scenarios after picking the node with minmum value** are :
-- it may have a right child and then this case redeces to Case 2
+Hence, the only **2 possible scenarios after picking the node with minimum value** are :
+- it may have a right child and then this case reduces to Case 2
 - it may have no child and then it reduces to Case 1
 
 **Approach 2** : Same as Approach 1, we only need to **find the node with maximum value in the left subtree**
