@@ -297,3 +297,26 @@ Hence, the only **2 possible scenarios after picking the node with minimum value
 *Shown below is an example as to what the tree would look like if we were to delete Node with value 15. Node 14(max in left subtree) or Node 17(min in right subtree), either of them can take it's place*  
 
 <img width="1409" alt="Screenshot 2022-07-19 at 8 49 30 PM" src="https://user-images.githubusercontent.com/15028913/179787182-b3256982-2f19-44d7-a016-e1bdec87f346.png">
+
+#### Find Inorder Successor in a BST
+
+We know how Inorder traversal proceeds - visit left-subtree, visit root and finally visit right-subtree. It's time complexity is O(n). Inorder traversal on a BST gives elements in a sorted order. We can figure out the successor while performing the traversal but this will be expensive as running time of inorder is **O(n)**.  
+Inorder successor of a node is the node that comes immediately after it in Inorder traversal, or the next high value in the tree.
+
+We are trying to do this in **O(h)**, *h being the height of the tree which is **log₂ n** for a BST*.
+
+**Case 1** : **Node has right subtree**  
+Go to the leftmost node in the right subtree. In other words find the minimum in the right subtree as it would be the inorder successor.  
+*Given below is the procedure to be followed in order to find the inorder successor of node with value 10*.
+
+![Screenshot 2022-07-21 at 3 32 49 PM](https://user-images.githubusercontent.com/15028913/180187891-79713b01-da21-4e47-95c2-651ff9563af9.png)
+
+**Case 2** : **Node has no right subtree**  
+
+1. If we go from the left, then the parent is unvisited and that will be our successor node.  
+*Given below is the procedure to be followed in order to find the inorder successor of node with value 8*.  
+<img width="1409" alt="Screenshot 2022-07-21 at 3 36 23 PM" src="https://user-images.githubusercontent.com/15028913/180188601-19aeace0-2600-496a-97fd-fd02115fc456.png">
+
+2. If we go from the right, then the parent would already be visited. Recursion will roll back further to the nearest ancestor for which the node is in the left subtree.  
+*Given below is the procedure to be followed in order to find the inorder successor of node with value 12*.  
+<img width="1409" alt="Screenshot 2022-07-21 at 3 37 25 PM" src="https://user-images.githubusercontent.com/15028913/180188815-24b070e4-e752-4354-bea8-24331f13b474.png">
