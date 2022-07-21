@@ -41,3 +41,11 @@ Node *FindNode(Node *root, int data)
     else
         return Find(root->right, data);
 }
+
+Node *FindMin(Node *root)
+{
+    while (root->left != NULL)
+        root = root->left;
+    return root;
+}
+
