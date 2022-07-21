@@ -30,3 +30,14 @@ Node *Insert(Node *root, int data)
     return root;
 }
 
+Node *FindNode(Node *root, int data)
+{
+    if (root == NULL)
+        return NULL;
+    else if (data == root->data)
+        return root;
+    else if (data <= root->data)
+        return Find(root->left, data);
+    else
+        return Find(root->right, data);
+}
