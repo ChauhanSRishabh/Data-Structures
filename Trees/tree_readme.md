@@ -250,3 +250,18 @@ Go to the leftmost node in the right subtree. In other words find the minimum in
 2. If we go from the right, then the parent would already be visited. Recursion will roll back further to the nearest ancestor for which the node is in the left subtree.  
 *Given below is the procedure to be followed in order to find the inorder successor of node with value 12*.  
 <img width="1409" alt="Screenshot 2022-07-21 at 3 37 25 PM" src="https://user-images.githubusercontent.com/15028913/180188815-24b070e4-e752-4354-bea8-24331f13b474.png">
+
+**Issue : How do we go from a node to it's parent?**  
+1. We can design a tree in such a way that node can have reference to it's parent.  
+```
+struct Node
+{
+    char data;
+    struct Node *left;
+    struct Node *right;
+    struct Node *parent;
+};
+```
+
+2. What if there is no link to parent?  
+ We start at root and walk the tree from root to the given node. For a BST, when we walk the tree, we will go through all the ancestors of the given node. Deepest ancestor for which the given node is in the left subtree is our desired node.
