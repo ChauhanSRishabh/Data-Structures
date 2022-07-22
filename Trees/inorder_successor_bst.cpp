@@ -49,3 +49,20 @@ Node *FindMin(Node *root)
     return root;
 }
 
+// Function to find INORDER SUCCESSOR
+// Takes address of root node and the data of the node for which we have to find the successor
+// returns the successor node
+Node *GetInorderSuccessor(Node *root, int data)
+{
+    // Search the node = O(h)
+    node *current = FindNode(root, data);
+    if (current == NULL)
+        return NULL;
+
+    // Case 1 : Node has right subtree
+    if (current->right != NULL)
+        return FindMin(current->right) // Node with minimum value in right subtree is our successor
+
+    // Case 2 : No right subtree
+    
+}
