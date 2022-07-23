@@ -82,30 +82,3 @@ Node *GetInorderSuccessor(Node *root, int data)
     }
 }
 
-int main()
-{
-    /*Code To Test the logic
-      Creating an example tree
-                5
-               / \
-              3   10
-             / \   \
-            2   4   11
-           /     \
-          1       5
-    */
-    Node *root = NULL;
-    root = Insert(root, 5);
-    root = Insert(root, 10);
-    root = Insert(root, 3);
-    root = Insert(root, 4);
-    root = Insert(root, 2);
-    root = Insert(root, 11);
-    root = Insert(root, 5);
-    root = Insert(root, 1);
-
-    Node * successor = GetInorderSuccessor(root, 3);
-    cout << "Inorder successor of 3 is : " << successor->data << endl;
-    successor = GetInorderSuccessor(root, 2);
-    cout << "Inorder successor of 2 is : " << successor->data;
-}
