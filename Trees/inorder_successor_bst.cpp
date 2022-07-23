@@ -5,12 +5,12 @@ using namespace std;
 
 struct Node
 {
-    char data;
+    int data;
     Node *left;
     Node *right;
 };
 
-Node *GetNewNode(char data)
+Node *GetNewNode(int data)
 {
     Node *newNode = new (Node);
     newNode->data = data;
@@ -21,7 +21,7 @@ Node *GetNewNode(char data)
 
 Node *Insert(Node *root, int data)
 {
-    if (root = NULL)
+    if (root == NULL)
         root = GetNewNode(data);
     else if (data <= root->data)
         root->left = Insert(root->left, data);
@@ -37,9 +37,9 @@ Node *FindNode(Node *root, int data)
     else if (data == root->data)
         return root;
     else if (data <= root->data)
-        return Find(root->left, data);
+        return FindNode(root->left, data);
     else
-        return Find(root->right, data);
+        return FindNode(root->right, data);
 }
 
 Node *FindMin(Node *root)
@@ -54,15 +54,31 @@ Node *FindMin(Node *root)
 // returns the successor node
 Node *GetInorderSuccessor(Node *root, int data)
 {
-    // Search the node = O(h)
-    node *current = FindNode(root, data);
+    // Search the node : O(h)
+    Node *current = FindNode(root, data);
     if (current == NULL)
         return NULL;
 
-    // Case 1 : Node has right subtree
+    // Case 1 : Node has right subtree : O(h)
     if (current->right != NULL)
-        return FindMin(current->right) // Node with minimum value in right subtree is our successor
+        return FindMin(current->right); // Node with minimum value in right subtree is our successor
 
-    // Case 2 : No right subtree
-    
+    // Case 2 : No right subtree : O(h)
+    else
+    {
+        Node* successor = NULL;
+        Node* ancestor = root;
+        while(ancestor != current)
+        {
+            if(current->data < ancestor->data)
+            {
+                successor = ancestor; // deepest node for which current is in left
+                ancestor = ancestor->left;
+            }
+            else
+                ancestor = ancestor->right;
+        }
+        return successor;
+    }
 }
+
