@@ -335,3 +335,17 @@ struct Node
 
 2. What if there is no link to parent?  
  We start at root and walk the tree from root to the given node. For a BST, when we walk the tree, we will go through all the ancestors of the given node. Deepest ancestor for which the given node is in the left subtree is our desired node.
+
+ #### Find Inorder Predecessor in a BST
+
+We know how Inorder traversal proceeds - visit left-subtree, visit root and finally visit right-subtree. It's time complexity is O(n). Inorder traversal on a BST gives elements in a sorted order. We can figure out the successor while performing the traversal but this will be expensive as running time of inorder is **O(n)**.  
+Inorder predecessor of a node is the node that comes immediately before it in Inorder traversal, or the value lesser than it in the tree.
+
+We are trying to do this in **O(h)**, *h being the height of the tree which is **log₂ n** for a BST*.
+
+**Case 1** : **Node has left subtree**  
+Go to the rightmost node in the left subtree. In other words find the maximum in the left subtree as it would be the inorder predecessor.
+
+**Case 2** : **Node has no left subtree**  
+
+The predecessor is the deepest ancestor for which the node is in the right subtree.
