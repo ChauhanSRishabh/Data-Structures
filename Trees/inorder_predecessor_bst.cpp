@@ -42,43 +42,43 @@ Node *FindNode(Node *root, int data)
         return FindNode(root->right, data);
 }
 
-Node *FindMin(Node *root)
+Node *FindMax(Node *root)
 {
-    while (root->left != NULL)
-        root = root->left;
+    while (root->right != NULL)
+        root = root->right;
     return root;
 }
 
-// Function to find INORDER SUCCESSOR
-// Takes address of root node and the data of the node for which we have to find the successor
-// returns the successor node
-Node *GetInorderSuccessor(Node *root, int data)
+// Function to find INORDER PREDECESSOR
+// Takes address of root node and the data of the node for which we have to find the predecessor
+// returns the predecessor node
+Node *GetInorderPredecessor(Node *root, int data)
 {
     // Search the node : O(h)
     Node *current = FindNode(root, data);
     if (current == NULL)
         return NULL;
 
-    // Case 1 : Node has right subtree : O(h)
-    if (current->right != NULL)
-        return FindMin(current->right); // Node with minimum value in right subtree is our successor
+    // Case 1 : Node has left subtree : O(h)
+    if (current->left != NULL)
+        return FindMax(current->left); // Node with minimum value in right subtree is our predecessor
 
-    // Case 2 : No right subtree : O(h)
+    // Case 2 : No left subtree : O(h)
     else
     {
-        Node* successor = NULL;
+        Node* predecessor = NULL;
         Node* ancestor = root;
         while(ancestor != current)
         {
-            if(current->data < ancestor->data)
+            if(current->data > ancestor->data)
             {
-                successor = ancestor; // deepest node for which current is in left
-                ancestor = ancestor->left;
+                predecessor = ancestor; // deepest node for which current is in right
+                ancestor = ancestor->right;
             }
             else
-                ancestor = ancestor->right;
+                ancestor = ancestor->left;
         }
-        return successor;
+        return predecessor;
     }
 }
 
@@ -104,8 +104,8 @@ int main()
     root = Insert(root, 5);
     root = Insert(root, 1);
 
-    Node * successor = GetInorderSuccessor(root, 3);
-    cout << "Inorder successor of 3 is : " << successor->data << endl;
-    successor = GetInorderSuccessor(root, 2);
-    cout << "Inorder successor of 2 is : " << successor->data;
+    Node * predecessor = GetInorderPredecessor(root, 3);
+    cout << "Inorder predecessor of 3 is : " << predecessor->data << endl;
+    predecessor = GetInorderPredecessor(root, 10);
+    cout << "Inorder predecessor of 10 is : " << predecessor->data;
 }
