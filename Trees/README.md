@@ -1,7 +1,7 @@
 # Trees
 
-Array, Linked List, Stack, Queue are all Linear Data Structures.  
-In all of these, data is arranged in a sequential manner. 
+Array, Linked List, Stack, Queue are all Linear Data Structures. In all of these, data is arranged in a sequential manner. The main disadvantage with linear data structures is that every node has information of next node only. Searching is sequential and is very slow, O(n).  
+A tree data structure represents hierarchical relationship among its elements. Searching is very fast.
 
 ## Concepts
 
@@ -10,7 +10,7 @@ In all of these, data is arranged in a sequential manner.
 Each arrow in the diagram is a link.  
 When we are walking the tree, we can walk in only one direction. 
 
-### Relationships
+### Terminology
 
 - **Root node** : The topmost node. Only node without a parent ; Node 1  
 - **Parent Node** : Node 1 is parent of nodes 2 and 3.  

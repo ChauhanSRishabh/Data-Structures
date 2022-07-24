@@ -70,8 +70,8 @@ Queues are most often used in a scenario where there is a shared resource that's
 
 ## TREES
 
-Array, Linked List, Stack, Queue are all Linear Data Structures.  
-In all of these, data is arranged in a sequential manner. 
+Array, Linked List, Stack, Queue are all Linear Data Structures. In all of these, data is arranged in a sequential manner. The main disadvantage with linear data structures is that every node has information of next node only. Searching is sequential and is very slow, O(n).  
+A tree data structure represents hierarchical relationship among its elements. Searching is very fast. 
 
 ### Concepts
 
