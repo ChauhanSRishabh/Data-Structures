@@ -390,3 +390,19 @@ Sometimes all the connections in a graph cannot be treated as equal, so we label
 
 A graph is unweighted if there is no cost distinction among edges.
 
+#### Kind of edges
+
+1. Self loops : If both end-points of an edge are same or if an edge only involves one vertex, then it's called a self-loop.  
+We can have a self-loop in both directed and undirected graph.
+*eg : clicking on a link to a page while already being on that page*
+
+2. Multi edge or Parallel edge : If an edge occurs more than once in a graph, then it's called a multi-edge.  
+We can have a multi-edge in both directed and undirected graph.  
+*eg : various connecting flights between 2 cities*
+
+<img width="1276" alt="Screenshot 2022-07-24 at 7 26 02 PM" src="https://user-images.githubusercontent.com/15028913/180650374-030cc305-8656-4cef-9e82-c5723cf588d7.png">
+
+#### Simple Graph
+
+If a graph contains no self-loop or multi-edge, it's called a Simple Graph
+
