@@ -367,3 +367,18 @@ unordered pair : {a, b} = {b, a}
 <img width="1409" alt="Screenshot 2022-07-24 at 5 36 44 PM" src="https://user-images.githubusercontent.com/15028913/180646200-768c079c-d874-4fad-9eb5-52c1b50663b6.png">
 
 
+### Types of Graph
+
+<img width="1409" alt="Screenshot 2022-07-24 at 5 37 05 PM" src="https://user-images.githubusercontent.com/15028913/180646212-abd15ee0-fb55-4f6c-aafe-3cf8baffeb9f.png">
+
+#### Directed Graph/ Digraph
+A directed graph or digraph has ordered pair of vertices (u, v) where u is the tail and v is the head of the edge.  
+In this type of graph, a direction is associated with each edge, i.e., (u, v) and (v, u) represent different edges.  
+*eg : World Wide Web*  
+<img width="960" alt="Screenshot 2022-07-24 at 5 50 07 PM" src="https://user-images.githubusercontent.com/15028913/180646699-f28491dd-a3e7-4785-a449-68307ef2c567.png">
+
+#### Undirected Graph
+A graph, which has unordered pair of vertices, is called undirected graph. If there is an edge between u and v then it can be represented as (u, v) or (v, u).  
+*eg : a social network like facebook*  
+<img width="1419" alt="Screenshot 2022-07-24 at 5 50 28 PM" src="https://user-images.githubusercontent.com/15028913/180646713-fe63c80a-6032-4cfd-b6c5-bf36de321051.png">
+
