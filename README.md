@@ -1,4 +1,4 @@
-# Data-Structures
+# DATA STRUCTURES
 Implementing Data Structures in C/C++
 
 ## Concepts
@@ -9,7 +9,7 @@ When we talk about a data structure as ADT, we only talk about the features/oper
 ### NULL
 NULL is basically assigned to a pointer to specify that the pointer points to no valid memory location.
 
-## Stacks
+## STACKS
 
 ### Stack ADT
 A list with the restriction that **insertion and deletion** can only be performed from one end, called **Top**  
@@ -44,7 +44,7 @@ Eg : **stack \<char\> S;** creates a stack of characters named S using STL
 3. **S.top()** - Returns the element at top of the stack.
 4. **S.empty()** - Checks whether the stack is empty or not. Returns *True* if empty, *False* otherwise.
 
-## Queues
+## QUEUES
 
 ### Queue ADT
 A list with the restriction that **insertion** must be at one end, i.e., the **rear or tail** of queue and **deletion** must be performed at the other end, i.e., the **front** of the queue.  
@@ -68,7 +68,7 @@ Queues are most often used in a scenario where there is a shared resource that's
 2. **Computer Processor** - process scheduling
 3. **Simulating wait**
 
-## Trees
+## TREES
 
 Array, Linked List, Stack, Queue are all Linear Data Structures.  
 In all of these, data is arranged in a sequential manner. 
@@ -349,3 +349,6 @@ Go to the rightmost node in the left subtree. In other words find the maximum in
 **Case 2** : **Node has no left subtree**  
 
 The predecessor is the deepest ancestor for which the node is in the right subtree.
+
+## GRAPHS
+
