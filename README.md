@@ -80,7 +80,7 @@ A tree data structure represents hierarchical relationship among its elements. S
 Each arrow in the diagram is a link.  
 When we are walking the tree, we can walk in only one direction. 
 
-#### Relationships
+#### Terminology
 
 - **Root node** : The topmost node. Only node without a parent ; Node 1  
 - **Parent Node** : Node 1 is parent of nodes 2 and 3.  
@@ -351,4 +351,19 @@ Go to the rightmost node in the left subtree. In other words find the maximum in
 The predecessor is the deepest ancestor for which the node is in the right subtree.
 
 ## GRAPHS
+
+In a tree with N nodes, we can have exactly N-1 edges. One edge for each parent-child relationship.  
+All nodes must be reachable from the root and there must be exactly one possible path from root to a node.
+
+**Tree is only a special kind of graph**.
+
+In a graph, there are no rules dictating the connection among the nodes. A graph contains a sets of nodes and a set of edges and edges can be connecting nodes in any possible way.
+
+*A graph G is an ordered pair of a set V of vertices and as et E of edges*.  
+**G = (V, E)**  
+ordered pair : (a,b) ≠ (b, a) if a ≠ b  
+unordered pair : {a, b} = {b, a}
+
+<img width="1409" alt="Screenshot 2022-07-24 at 5 36 44 PM" src="https://user-images.githubusercontent.com/15028913/180646200-768c079c-d874-4fad-9eb5-52c1b50663b6.png">
+
 
