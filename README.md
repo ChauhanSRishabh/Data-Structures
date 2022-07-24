@@ -382,3 +382,11 @@ A graph, which has unordered pair of vertices, is called undirected graph. If th
 *eg : a social network like facebook*  
 <img width="1419" alt="Screenshot 2022-07-24 at 5 50 28 PM" src="https://user-images.githubusercontent.com/15028913/180646713-fe63c80a-6032-4cfd-b6c5-bf36de321051.png">
 
+### Properties
+
+#### Weighted vs Unweighted Graph
+
+Sometimes all the connections in a graph cannot be treated as equal, so we label edges with some weight or cost, i.e., some value is associated to connections. Such a graph is called a weighted graph.  
+
+A graph is unweighted if there is no cost distinction among edges.
+
