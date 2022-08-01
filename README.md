@@ -458,3 +458,42 @@ A graph with no cycle.
 A tree if drawn with undirected edges will be an example of Undirected acyclic graph.
 
 <img width="1408" alt="Screenshot 2022-08-01 at 12 19 25 PM" src="https://user-images.githubusercontent.com/15028913/182089017-439e37ea-db32-4230-a153-9e77a50cd7c1.png">
+
+### Graph Representation Technique 1 - Edge List
+
+**Undirected Graph**
+
+<img width="1408" alt="Screenshot 2022-08-01 at 12 24 42 PM" src="https://user-images.githubusercontent.com/15028913/182089944-309a342a-6d07-4490-a70d-95d6fdd5f1d1.png">
+
+**Weighted undirected Graph**
+
+<img width="1408" alt="Screenshot 2022-08-01 at 12 29 20 PM" src="https://user-images.githubusercontent.com/15028913/182090739-5de2a1e0-2977-478a-93c7-c7f4edc9908d.png">
+
+**Improving Memory cost**
+
+For the edge list, we could have names with multiple characters and because strings can be of different lengths, all rows may not be consuming the same amount of memory. More characters will cost us more bytes.
+
+Total space consumed in the Vertex List will be proportional to the number of rows consumed, i.e., the number of vertices, **O(|V|)**.
+
+For the Edge List, we are storing strings in first 2 fields of the Edge object and so each row will not consume same amount of memory but if we are just storing the reference(pointers to the names in the Vertex List), then each row will consume same memory, **O(|E|)**
+*We change the type of startVertex and endVertex from string to int*.
+
+Overall Space complexity : **O(|V| + |E|)**
+
+<img width="1408" alt="Screenshot 2022-08-01 at 12 33 42 PM" src="https://user-images.githubusercontent.com/15028913/182091465-f8b3738b-a0b8-4083-8f1f-bc7fe984d332.png">
+
+**Time cost of operations**
+
+One of the most frequently performed operations while working with graph would be finding all nodes adjacent to a given node.  
+In this case, we will have to perform a linear search on the Edge List. In worst case, we will have to look at all the entries in the Edge List.  
+Worst case time complexity of this operation would be **O(|E|)**
+
+Another frequently performed operation would be finding if 2 given nodes are connected or not?  
+In this case also, we will have to perform a linear search on the Edge List. In worst case, we will have to look at all the entries in the Edge List.  
+Worst case time complexity of this operation would be **O(|E|)**
+
+We know maximum number of edges is close to **v²**, *v being the number of vertices*  
+So O(|E|) = (O(|v|\*O(|v|), which is costly.  
+We try to keep things in O(|v|)
+
+All in all, this Vertex List and Edge List kind of representation is **not very efficient** in terms of time-cost of operations.
