@@ -374,7 +374,7 @@ unordered pair : {a, b} = {b, a}
 #### Directed Graph/ Digraph
 A directed graph or digraph has ordered pair of vertices (u, v) where u is the tail and v is the head of the edge.  
 In this type of graph, a direction is associated with each edge, i.e., (u, v) and (v, u) represent different edges.  
-*eg : World Wide Web*  
+*eg : World Wide Web, Intracity Road Network(will have one-ways)*  
 <img width="960" alt="Screenshot 2022-07-24 at 5 50 07 PM" src="https://user-images.githubusercontent.com/15028913/180646699-f28491dd-a3e7-4785-a449-68307ef2c567.png">
 
 #### Undirected Graph
@@ -411,7 +411,7 @@ If a graph contains no self-loop or multi-edge, it's called a Simple Graph
 For a **directed graph** with 4 vertices, we can have 3 directed edges from each vertex. Total edges = 4*3 = 12.  
 Hence for n vertices, maximum number of edges would be **n(n-1)**
 
-For an **undirected graph**, we can only have one edge between 2 vertices as opposed to the 2 for directed.  Hence maximum number of edges would be of maximum for directed, i.e., **n(n-1)/2**
+For an **undirected graph**, we can only have one edge between 2 vertices as opposed to the 2 for directed.  Hence maximum number of edges would be half of maximum for directed, i.e., **n(n-1)/2**
 
 <img width="1408" alt="Screenshot 2022-08-01 at 11 38 38 AM" src="https://user-images.githubusercontent.com/15028913/182083044-324d6cd3-ebba-46d1-bc86-7959a1a82be5.png">
 
@@ -422,4 +422,21 @@ For a dense graph, we use **Adjacency Matrix**.
 
 A graph is called **Sparse** if number of edges is really less, typically close to number of vertices.  
 For a sparse graph, we use **Adjacency List**.
+
+#### Walk, Cycle, Path, Length of path & Trail
+
+**Walk** : A sequence of vertices where each adjacent pair in the sequence is connected by an edge.  
+A walk is called a **closed walk** if:
+- it starts and ends at the same vertex, and 
+- length of the walk is grater than 0.
+
+**Simple cycle** : A closed walk in which other than start and end vertices, no other vertex or edge is repeated.
+
+**Simple Path** : A walk in which no vertices(and thus no edges) are repeated.  
+
+**Length of path** is the number of edges in the path.
+
+**Trail** : A walk in which no edges are repeated.
+
+**Imp** : *Walk and Path are often used as synonyms but most often, when we say path, we mean simple path*.
 
