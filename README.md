@@ -450,3 +450,11 @@ If it is an undirected graph, we simply call it **connected**.
 If a directed graph is not strongly connected but can be turned into a connected graph by treating all edges as undirected, then such a graph is called **Weakly connected**.
 
 <img width="1408" alt="Screenshot 2022-08-01 at 12 03 53 PM" src="https://user-images.githubusercontent.com/15028913/182086565-b7514f30-332f-43cf-883b-51becd81cc28.png">
+
+#### Acyclic Graph
+
+A graph with no cycle.
+
+A tree if drawn with undirected edges will be an example of Undirected acyclic graph.
+
+<img width="1408" alt="Screenshot 2022-08-01 at 12 19 25 PM" src="https://user-images.githubusercontent.com/15028913/182089017-439e37ea-db32-4230-a153-9e77a50cd7c1.png">
