@@ -406,3 +406,20 @@ We can have a multi-edge in both directed and undirected graph.
 
 If a graph contains no self-loop or multi-edge, it's called a Simple Graph
 
+#### Number of edges
+
+For a **directed graph** with 4 vertices, we can have 3 directed edges from each vertex. Total edges = 4*3 = 12.  
+Hence for n vertices, maximum number of edges would be **n(n-1)**
+
+For an **undirected graph**, we can only have one edge between 2 vertices as opposed to the 2 for directed.  Hence maximum number of edges would be of maximum for directed, i.e., **n(n-1)/2**
+
+<img width="1408" alt="Screenshot 2022-08-01 at 11 38 38 AM" src="https://user-images.githubusercontent.com/15028913/182083044-324d6cd3-ebba-46d1-bc86-7959a1a82be5.png">
+
+*Maximum number of edges will be close to square of vertices*.
+
+A graph is called **Dense** if number of edges is close to maximum possible number of edges.  
+For a dense graph, we use **Adjacency Matrix**.
+
+A graph is called **Sparse** if number of edges is really less, typically close to number of vertices.  
+For a sparse graph, we use **Adjacency List**.
+
