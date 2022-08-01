@@ -440,3 +440,13 @@ A walk is called a **closed walk** if:
 
 **Imp** : *Walk and Path are often used as synonyms but most often, when we say path, we mean simple path*.
 
+#### Connected, Strongly connected
+
+**Strongly connected graph** : In a directed graph, if there is a path from any vertex to any other vertex, we call it strongly connected.  
+*eg : Intracity road network, we must be able to reach any street from any other street*
+
+If it is an undirected graph, we simply call it **connected**.
+
+If a directed graph is not strongly connected but can be turned into a connected graph by treating all edges as undirected, then such a graph is called **Weakly connected**.
+
+<img width="1408" alt="Screenshot 2022-08-01 at 12 03 53 PM" src="https://user-images.githubusercontent.com/15028913/182086565-b7514f30-332f-43cf-883b-51becd81cc28.png">
